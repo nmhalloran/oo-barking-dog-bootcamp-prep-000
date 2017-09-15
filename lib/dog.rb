@@ -21,6 +21,6 @@ class TicTacToe
   end
 end
 
-game = TicTacToe.new(Array.new(9, "X" "O"))
+game = TicTacToe.new(Array.new(9, "X", "O"))
 
 game.display_board
