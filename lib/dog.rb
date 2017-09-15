@@ -1,14 +1,24 @@
 # Your code goes here!
-class Dog
-  def name=(name)
-    @name = name
+class TicTacToe
+  def initialize(board = nil)
+    @board = board || Array.new(9, " ")
   end
-
-  def name
-    @name
+ 
+  def current_player
+    turn_count % 2 == 0 ? "X" : "O"
   end
-
-  def bark
-    puts "woof!"
+ 
+  def turn_count
+    @board.count{|token| token == "X" || token == "O"}
+  end
+ 
+  def display_board
+    puts " #{@board[0]} | #{@board[1]} | #{@board[2]} "
+    puts "-----------"
+    puts " #{@board[3]} | #{@board[4]} | #{@board[5]} "
+    puts "-----------"
+    puts " #{@board[6]} | #{@board[7]} | #{@board[8]} "
   end
 end
+
+game = TicTacToe.new(Array.new(9," "))
